@@ -11,4 +11,4 @@ manually.
 * Select the `ml8_9.json` file from this directory. 
 * You can now use via normally (click on the first tab to program the pad).
 * After you're done, if you want to update the layer text for the OLED, use the
-  included [programmer](../kbp/README.md).
+  included [programmer](../cli/README.md).

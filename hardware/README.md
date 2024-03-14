@@ -26,9 +26,11 @@ All components are through-hole except for the hot-swap sockets.
 
 1. Begin by mounting 3x3 matrix diodes (D1-D9) and hotswap sockets to underside
    of board (where their labels are). Solder these in place.
-    * The D10 diode will be soldered on top of the board. 
-    * It's easier to solder the hotswap sockets first, so that you don't have to
-      worry about the board sitting stably while soldering these.
+   * The hotswap sockets are easiest to solder when you put a small amount of
+     solder on the pad, then place the socket and heat the pad. 
+   * The D10 diode will be soldered on top of the board. 
+   * It's easier to solder the hotswap sockets first, so that you don't have to
+     worry about the board sitting stably while soldering these.
 2. Next, mount the D10 diode, the resistor (R-RESET) to top of board. Solder in
    place.
 3. Mount the EEPROM, reset switch, and rotary encoder on top of the board; solder

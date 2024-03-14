@@ -9,7 +9,7 @@ import (
 	"strings"
 
 	"github.com/golang/glog"
-	kbp "github.com/ml8/3x3/kbp"
+	kbp "github.com/ml8/3x3/cli"
 )
 
 var (

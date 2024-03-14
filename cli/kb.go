@@ -50,7 +50,7 @@ func prepareMessage(buffer []byte, cmd uint8, data []byte) {
 	}
 }
 
-func prepareLayerMessage(buffer []byte, data []byte, cmd uint8, layer uint8, length uint8) {
+func fillLayerMsg(buffer []byte, data []byte, cmd uint8, layer uint8, length uint8) {
 	prepareMessage(buffer, cmd, nil)
 	buffer[3] = layer
 	buffer[4] = length
@@ -59,16 +59,16 @@ func prepareLayerMessage(buffer []byte, data []byte, cmd uint8, layer uint8, len
 	}
 }
 
-func prepareStartMessage(buffer []byte, data []byte, cmd uint8, layer uint8, length uint8) {
-	prepareLayerMessage(buffer, data, cmd, layer, length)
+func fillStartMsg(buffer []byte, data []byte, cmd uint8, layer uint8, length uint8) {
+	fillLayerMsg(buffer, data, cmd, layer, length)
 }
 
-func prepareContinueMessage(buffer []byte, data []byte, layer uint8, length uint8) {
-	prepareLayerMessage(buffer, data, CMD_CONT, layer, length)
+func fillContinueMsg(buffer []byte, data []byte, layer uint8, length uint8) {
+	fillLayerMsg(buffer, data, CMD_CONT, layer, length)
 }
 
-func prepareCompleteMessage(buffer []byte, layer uint8) {
-	prepareLayerMessage(buffer, nil, CMD_COMPLETE, layer, 0)
+func fillCompletionMsg(buffer []byte, layer uint8) {
+	fillLayerMsg(buffer, nil, CMD_COMPLETE, layer, 0)
 }
 
 func handleAckOrNack(dev *hid.Device) (response []byte, err error) {
@@ -123,9 +123,9 @@ func sendSegmented(dev *hid.Device, cmd uint8, layer uint8, data []byte) error {
 		}
 
 		if isStart {
-			prepareStartMessage(buf, data[:l], CMD_OLED_UPDATE, layer, l)
+			fillStartMsg(buf, data[:l], CMD_OLED_UPDATE, layer, l)
 		} else {
-			prepareContinueMessage(buf, data[:l], layer, l)
+			fillContinueMsg(buf, data[:l], layer, l)
 		}
 		data = data[l:]
 		tot -= l
@@ -144,7 +144,7 @@ func sendSegmented(dev *hid.Device, cmd uint8, layer uint8, data []byte) error {
 		glog.Infof("Wrote %d; %d bytes remaining", l, tot)
 	}
 	// Prepare and send completion message.
-	prepareCompleteMessage(buf, layer)
+	fillCompletionMsg(buf, layer)
 	glog.Infof("Sending completion message %v", buf)
 	dev.Write(buf)
 	_, err = handleAckOrNack(dev)

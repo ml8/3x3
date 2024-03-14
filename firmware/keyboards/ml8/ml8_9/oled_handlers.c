@@ -15,8 +15,8 @@
 oled_text_t g_sys_layer_text[LAYER_COUNT] = {
   "Media\nPrev | Play | Next \nStop | Mute | ^\n  <  |   >  | v",
   "Zoom\nTalk | Mic  | Video \nFull | Quit | Enter\nHand |      |",
-  "Numpad\n 1   |  2   | 3\n 4   |  5   | 6\n 7   |  8   | 9",
-  "Undefined"
+  "Meet\nTalk | Mic  | Video \nFull | Quit | Enter\nHand |      |",
+  "Teams\nTalk | Mic  | Video \nFull | Quit | Enter\nHand |      |"
 };
 // clang-format on
 
@@ -46,6 +46,7 @@ void oled_layer_update(uint8_t layer, char *data, uint8_t length) {
 
     dprintf("updating layer text with string:\n%s\n", data);
     strncpy(g_layer_text[layer], data, sizeof(oled_text_t));
+    // ensure dest is terminated
     g_layer_text[layer][strnlen(data, sizeof(oled_text_t))] = '\0';
     persist_user_layer_labels();
 #if defined(OLED_ENABLE)

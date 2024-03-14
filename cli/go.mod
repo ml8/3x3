@@ -1,4 +1,4 @@
-module github.com/ml8/3x3/kbp
+module github.com/ml8/3x3/cli
 
 go 1.21
 

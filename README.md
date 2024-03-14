@@ -8,13 +8,13 @@ Features:
 
 * 4 layers configurable with [via](https://www.caniusevia.com/).
 * OLED display to display per-layer text (programmable with tool in
-  [`kbp/`](kbp/README.md)).
+  [`cli/`](cli/README.md)).
 * Rotary encoder with volume control and layer select button.
 * 256Kb EEPROM (24LC256).
 
 Project layout:
 
-* [`kbp/`](kbp/README.md) - tool to program keyboard (primarily to change OLED text)
+* [`cli/`](cli/README.md) - tool to program keyboard (primarily to change OLED text)
 * [`firmware/`](firmware/README.md) - [QMK](https://qmk.fm/)-based firmware (TODO: merge into QMK)
 * [`via/`](via/README.md) - Via json config (TODO: merge into via) that can be
   used for programming (once merged into via, this should no longer be

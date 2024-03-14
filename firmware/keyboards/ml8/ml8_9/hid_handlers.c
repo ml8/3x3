@@ -119,7 +119,7 @@ bool start_or_continue_oled_layer_update(uint8_t cmd, uint8_t *buffer) {
         dprintf("buffering %d bytes...\n", len);
         strncpy(&g_transfer_state.buffer[g_transfer_state.buffer_offset], (char *)&buffer[2], len);
         g_transfer_state.buffer_offset += len;
-        // null terminate for debug XXX
+        // null terminate for debug printing
         g_transfer_state.buffer[g_transfer_state.buffer_offset] = '\0';
         dprintf("current buffer: %s\n", g_transfer_state.buffer);
     }

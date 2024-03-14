@@ -8,6 +8,7 @@ reprogramming OLED text via hid programming.*
 * Keyboard Maintainer: [Marion Lang](https://github.com/ml8)
 * Hardware Supported: [ml8\_9](https://github.com/ml8/3x3)
 * Hardware Availability: [open source](https://github.com/ml8/3x3)
+* OLED display programmer: [repo](https://github.com/ml8/3x3)
 
 Make example for this keyboard (after setting up your build environment):
 
@@ -23,6 +24,6 @@ See the [build environment setup](https://docs.qmk.fm/#/getting_started_build_to
 
 Enter the bootloader in 3 ways:
 
-* **Bootmagic reset**: Hold down the key at (0,0) in the matrix (usually the top left key or Escape) and plug in the keyboard
+* **Bootmagic reset**: Hold down the key at (0,0) in the matrix (top left key in 3x3 matrix) and plug in the keyboard
 * **Physical reset button**: Briefly press the button on the top of the PCB
 * **Keycode in layout**: Press the key mapped to `QK_BOOT` if it is available

@@ -18,7 +18,7 @@ bool is_post_init(void) {
     return g_post_init;
 }
 
-void keyboard_post_init_user(void) {
+void init(void) {
 #if defined(CONSOLE_ENABLE)
     debug_matrix = true;
     debug_enable = true;
@@ -26,11 +26,15 @@ void keyboard_post_init_user(void) {
     wait_ms(1000);
     dprint("hi 0v0\n");
 #endif
-
     // initialize layer labels
     persistence_init();
-
     g_post_init = 1;
+}
+
+void keyboard_post_init_user(void) {
+    if (!g_post_init) {
+        init();
+    }
 }
 
 // Move to next layer
