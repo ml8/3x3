@@ -24,8 +24,8 @@ All components are through-hole except for the hot-swap sockets.
 
 ## Assembly Notes
 
-The following is an overview of assembling the macropad. You can find more
-detailed instructions [here](./assembly_detailed.md).
+The following is an overview of assembling the macropad. __You can find more
+detailed instructions [here](./assembly_detailed.md).__
 
 1. Begin by mounting 3x3 matrix diodes (D1-D9) and hotswap sockets to underside
    of board (where their labels are). Solder these in place.
