@@ -3,7 +3,7 @@
 ## Collect materials
 
 Assembling the macropad is relatively straightforward if you have experience
-soldering through-hold components. There are a small number of discrete
+soldering through-hole components. There are a small number of discrete
 components. The photo below lays them out.
 
 ![materials](./img/bom.jpeg)
@@ -18,7 +18,7 @@ assembled):
 
 * Hot swap switch sockets.
 * 1N4148 diodes.
-* A 1k Ohm resistor.
+* A 1k ohm resistor.
 * Reset/firmware flash button, 24LC256 EEPROM, and rotary encoder.
 * 0.91" 128x32 OLED and wires for it.
 
@@ -29,7 +29,7 @@ required: __D10 and the resistor__ must be installed before the Arduino.
 ## Hot swap sockets
 
 The hot swap sockets are the only component that may be unfamiliar to solder if
-you are used to through-hold soldering.
+you are used to through-hole soldering.
 
 Instead of trying to solder the socket tabs directly to the pads they mount on,
 it is helpful to first put a blob of solder on the pad.
